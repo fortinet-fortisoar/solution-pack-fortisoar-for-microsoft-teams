@@ -1,0 +1,15 @@
+{
+    "uuid": "04f6e897-d2c8-4fe0-ad70-7f03d6120f9a",
+    "type": "connector",
+    "name": "Microsoft Teams Link",
+    "description": "To send a message to Microsoft Teams when certain rule is met.",
+    "config": {
+        "label": "Microsoft Teams",
+        "config": "43f79cd0-d490-4ad1-aba5-ccf780c759e6",
+        "version": "3.0.0",
+        "connector": "microsoft-teams",
+        "operation": "send_input"
+    },
+    "is_active": true,
+    "default_params": []
+}

@@ -1,0 +1,14 @@
+[
+    {
+        "id": 7,
+        "name": "Server_fqhn",
+        "value": "localhost.localdomain",
+        "default_value": "master.fortisoar.in"
+    },
+    {
+        "id": 25,
+        "name": "server_url",
+        "value": "localhost.localdomain",
+        "default_value": "localhost.localdomain"
+    }
+]
