@@ -34,18 +34,7 @@
                 "name": "02 - Use Case - FortiSOAR for Microsoft Teams"
             }
         ],
-        "globalVariables": [
-            {
-                "name": "Server_fqhn",
-                "value": "localhost.localdomain",
-                "default_value": "localhost.localdomain"
-            },
-            {
-                "name": "server_url",
-                "value": "localhost.localdomain",
-                "default_value": "localhost.localdomain"
-            }
-        ],
+        "globalVariables": [],
         "playbookBlocks": [],
         "rules": [
             "Microsoft Teams > Send Manual Input link",
