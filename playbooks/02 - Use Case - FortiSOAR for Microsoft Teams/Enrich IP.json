@@ -4,7 +4,7 @@
     "name": "Enrich IP",
     "aliasName": null,
     "tag": null,
-    "description": "Gets triggered on enrichIP command when used in Microsoft Teams",
+    "description": "This playbook triggers after hitting an enrichIP command using FortiSOAR for Microsoft Teams Bot",
     "isActive": true,
     "debug": false,
     "singleRecordExecution": false,
