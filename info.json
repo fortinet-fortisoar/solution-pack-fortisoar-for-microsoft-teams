@@ -1,0 +1,66 @@
+{
+    "name": "fortiSOARForMicrosoftTeams",
+    "version": "1.0.0",
+    "fsrMinCompatibility": "",
+    "type": "solutionpack",
+    "label": "FortiSOAR For Microsoft Teams",
+    "dependencies": [
+        {
+            "name": "sOARFramework",
+            "type": "solutionpack",
+            "label": "SOAR Framework",
+            "minVersion": null
+        }
+    ],
+    "prerequisite": null,
+    "publisher": "Fortinet",
+    "description": "FortiSOAR for Microsoft Teams application allows teams to leverage the power of FortiSOAR as part of their daily communications.",
+    "help": null,
+    "category": [
+        "Communication and Coordination"
+    ],
+    "supportInfo": "support@fortinet.com",
+    "iconLarge": null,
+    "postInstallConfig": null,
+    "date": "2023-06-13T07:13:48+00:00",
+    "contents": {
+        "picklistNames": [
+            {
+                "name": "External Channel"
+            }
+        ],
+        "playbooks": [
+            {
+                "name": "02 - Use Case - FortiSOAR for Microsoft Teams"
+            }
+        ],
+        "globalVariables": [
+            {
+                "name": "Server_fqhn",
+                "value": "localhost.localdomain",
+                "default_value": "localhost.localdomain"
+            },
+            {
+                "name": "server_url",
+                "value": "localhost.localdomain",
+                "default_value": "localhost.localdomain"
+            }
+        ],
+        "playbookBlocks": [],
+        "rules": [
+            "Microsoft Teams > Send Manual Input link",
+            "Microsoft Teams > Notify on Playbook failure",
+            "Microsoft Teams > Send Manual Input Form"
+        ],
+        "ruleChannels": [
+            "Microsoft Team",
+            "Microsoft Teams Link"
+        ],
+        "connectors": [
+            {
+                "name": "Microsoft Teams",
+                "apiName": "microsoft-teams"
+            }
+        ]
+    }
+}

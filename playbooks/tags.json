@@ -1,0 +1,6 @@
+[
+    "bot_enabled",
+    "create_alert_msteams",
+    "create_indicator_msteams",
+    "enrich_ip_msteams"
+]

@@ -1,0 +1,12 @@
+[
+    {
+        "name": "Server_fqhn",
+        "value": "localhost.localdomain",
+        "default_value": "localhost.localdomain"
+    },
+    {
+        "name": "server_url",
+        "value": "localhost.localdomain",
+        "default_value": "localhost.localdomain"
+    }
+]

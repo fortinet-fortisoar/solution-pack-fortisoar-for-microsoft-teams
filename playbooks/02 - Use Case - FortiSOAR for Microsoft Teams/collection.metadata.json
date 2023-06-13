@@ -1,0 +1,11 @@
+{
+    "@context": "\/api\/3\/contexts\/WorkflowCollection",
+    "@type": "WorkflowCollection",
+    "name": "02 - Use Case - FortiSOAR for Microsoft Teams",
+    "description": null,
+    "visible": true,
+    "image": null,
+    "uuid": "fc1ec058-a935-442f-8bb2-0b12ab5717eb",
+    "deletedAt": null,
+    "recordTags": []
+}
