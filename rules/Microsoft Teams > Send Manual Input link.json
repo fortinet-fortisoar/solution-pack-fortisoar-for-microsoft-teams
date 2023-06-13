@@ -1,0 +1,58 @@
+{
+    "uuid": "d59e697a-6822-4b0e-a6a9-caf80904449b",
+    "name": "Microsoft Teams > Send Manual Input link",
+    "entity_type": "manualinput",
+    "event_type": "create",
+    "trigger_condition": {
+        "sort": [],
+        "limit": 30,
+        "logic": "AND",
+        "filters": [
+            {
+                "type": "primitive",
+                "field": "unauthenticated_input",
+                "value": true,
+                "operator": "eq",
+                "_operator": "eq"
+            },
+            {
+                "type": "array",
+                "field": "external_channel_list",
+                "value": [
+                    "\/api\/3\/picklists\/c7c35e25-9c26-4a43-a984-4f57d2027111"
+                ],
+                "module": "external_channel_list",
+                "display": "",
+                "operator": "in",
+                "template": "multiselectpicklist",
+                "OPERATOR_KEY": "$",
+                "useInOperator": true,
+                "previousOperator": "in",
+                "previousTemplate": "multiselectpicklist"
+            }
+        ]
+    },
+    "actions": [
+        {
+            "type": "connector",
+            "params": {
+                "input": "{{vars.input.record}}",
+                "message": "**A FortiSOAR playbook is requesting your input.  Please provide your input using the following link:**  <a href=\"https:\/\/{{vars.input.record.server_fqhn | ternary(vars.input.record.server_fqhn, globalVars.Server_fqhn)}}\/{{vars.input.record.agent_id | ternary('', 'input')}}?inputId={{vars.input.record.id}}&amp;token={{vars.input.record.token}}\"> Open input form<\/a>\n<br>FortiSOAR Admin.<br>"
+            },
+            "enabled": true,
+            "channel_uuid": "04f6e897-d2c8-4fe0-ad70-7f03d6120f9a"
+        }
+    ],
+    "is_system": false,
+    "is_active": true,
+    "priority": 10,
+    "event_source": "sealab",
+    "source": null,
+    "channel_preference_field": null,
+    "visible": true,
+    "category": "generic",
+    "expiry": null,
+    "entity_id": null,
+    "parent_rule": null,
+    "workflow": null
+}

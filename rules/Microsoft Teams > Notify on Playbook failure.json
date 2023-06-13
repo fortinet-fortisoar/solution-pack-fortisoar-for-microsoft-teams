@@ -1,0 +1,51 @@
+{
+    "uuid": "5a92d2a9-0055-4777-82e2-2bd7b7cf16d3",
+    "name": "Microsoft Teams > Notify on Playbook failure",
+    "entity_type": "workflow_logs",
+    "event_type": "failed",
+    "trigger_condition": {
+        "sort": [],
+        "limit": 30,
+        "logic": "AND",
+        "filters": [
+            {
+                "type": "array",
+                "field": "recordTags",
+                "value": [
+                    "\/api\/3\/tags\/bot_enabled"
+                ],
+                "module": "recordTags",
+                "display": "",
+                "operator": "in",
+                "template": "tags",
+                "OPERATOR_KEY": "$",
+                "useInOperator": true,
+                "previousOperator": "in",
+                "previousTemplate": "tags"
+            }
+        ]
+    },
+    "actions": [
+        {
+            "type": "connector",
+            "params": {
+                "input": "{{vars.input.record}}",
+                "message": "\"{{vars.input.record.name}}\" Playbook has failed. Please check the \"Executed Playbook Logs\" in FortiSOAR."
+            },
+            "enabled": true,
+            "channel_uuid": "04f6e897-d2c8-4fe0-ad70-7f03d6120f9a"
+        }
+    ],
+    "is_system": false,
+    "is_active": true,
+    "priority": 10,
+    "event_source": "sealab",
+    "source": null,
+    "channel_preference_field": null,
+    "visible": true,
+    "category": "generic",
+    "expiry": null,
+    "entity_id": null,
+    "parent_rule": null,
+    "workflow": null
+}

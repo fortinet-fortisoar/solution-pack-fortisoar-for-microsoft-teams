@@ -1,0 +1,13 @@
+[
+    {
+        "name": "microsoft-teams",
+        "label": "Microsoft Teams",
+        "category": "Communication",
+        "description": "Microsoft Teams is a chat-based workspace in Office 365 that provides global, remote, and dispersed teams with the ability to work together and share information using a common space. This connector facilitates automated operation related to teams.",
+        "publisher": null,
+        "operation_roles": [],
+        "configurations": [],
+        "dataImports": [],
+        "install_mode": "rpm"
+    }
+]
