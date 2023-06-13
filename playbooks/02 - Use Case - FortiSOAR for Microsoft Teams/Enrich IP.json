@@ -1,0 +1,90 @@
+{
+    "@type": "Workflow",
+    "triggerLimit": null,
+    "name": "Enrich IP",
+    "aliasName": null,
+    "tag": null,
+    "description": "Gets triggered on enrichIP command when used in Microsoft Teams",
+    "isActive": true,
+    "debug": false,
+    "singleRecordExecution": false,
+    "remoteExecutableFlag": false,
+    "parameters": [],
+    "synchronous": false,
+    "collection": "\/api\/3\/workflow_collections\/fc1ec058-a935-442f-8bb2-0b12ab5717eb",
+    "versions": [],
+    "triggerStep": "\/api\/3\/workflow_steps\/f008f767-4e65-4b5b-85ea-391edfb4952a",
+    "steps": [
+        {
+            "@type": "WorkflowStep",
+            "name": "Enrich IP",
+            "description": null,
+            "arguments": {
+                "arguments": {
+                    "IPAddress": "{{vars.bot_context.enrich_ip_input}}",
+                    "BotContext": "{{vars.bot_context}}"
+                },
+                "apply_async": false,
+                "step_variables": [],
+                "pass_parent_env": false,
+                "pass_input_record": false,
+                "workflowReference": "\/api\/3\/workflows\/9e99ba9b-1536-444e-8aae-db904485567c"
+            },
+            "status": null,
+            "top": "157",
+            "left": "414",
+            "stepType": "\/api\/3\/workflow_step_types\/74932bdc-b8b6-4d24-88c4-1a4dfbc524f3",
+            "group": null,
+            "uuid": "0ae898c7-7cf9-40bb-9dfb-fa92b1625f70"
+        },
+        {
+            "@type": "WorkflowStep",
+            "name": "Start",
+            "description": null,
+            "arguments": {
+                "route": "14c3d5be-3a6a-4189-96f4-db3cf0dab9cd",
+                "resources": [
+                    "alerts"
+                ],
+                "inputVariables": [],
+                "step_variables": {
+                    "input": {
+                        "params": [],
+                        "records": "{{vars.input.records}}"
+                    }
+                },
+                "executeButtonText": "Execute",
+                "noRecordExecution": true,
+                "singleRecordExecution": false
+            },
+            "status": null,
+            "top": "40",
+            "left": "40",
+            "stepType": "\/api\/3\/workflow_step_types\/f414d039-bb0d-4e59-9c39-a8f1e880b18a",
+            "group": null,
+            "uuid": "f008f767-4e65-4b5b-85ea-391edfb4952a"
+        }
+    ],
+    "routes": [
+        {
+            "@type": "WorkflowRoute",
+            "name": "Start -> Enrich IP",
+            "targetStep": "\/api\/3\/workflow_steps\/0ae898c7-7cf9-40bb-9dfb-fa92b1625f70",
+            "sourceStep": "\/api\/3\/workflow_steps\/f008f767-4e65-4b5b-85ea-391edfb4952a",
+            "label": null,
+            "isExecuted": false,
+            "group": null,
+            "uuid": "9e22fd8a-32f7-4b0c-8fab-db2137f104b1"
+        }
+    ],
+    "groups": [],
+    "priority": "\/api\/3\/picklists\/2b563c61-ae2c-41c0-a85a-c9709585e3f2",
+    "uuid": "859b98d6-42ab-4caa-b516-999f4af3d549",
+    "owners": [],
+    "isPrivate": false,
+    "deletedAt": null,
+    "recordTags": [
+        "bot_enabled",
+        "enrich_ip_msteams"
+    ]
+}

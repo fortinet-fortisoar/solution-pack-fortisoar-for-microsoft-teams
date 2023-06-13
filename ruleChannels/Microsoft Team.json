@@ -1,0 +1,15 @@
+{
+    "uuid": "339144cd-ed92-4911-a1d4-4c2986acba0e",
+    "type": "connector",
+    "name": "Microsoft Team",
+    "description": "It Sends a Manual Input Form to the Microsoft Teams application.",
+    "config": {
+        "label": "Microsoft Teams",
+        "config": "43f79cd0-d490-4ad1-aba5-ccf780c759e6",
+        "version": "3.0.0",
+        "connector": "microsoft-teams",
+        "operation": "send_input"
+    },
+    "is_active": true,
+    "default_params": []
+}

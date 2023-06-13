@@ -1,0 +1,70 @@
+{
+    "name": "fortiSOARForMicrosoftTeams",
+    "version": "1.0.0",
+    "fsrMinCompatibility": "",
+    "type": "solutionpack",
+    "local": true,
+    "label": "FortiSOAR For Microsoft Teams",
+    "dependencies": [
+        {
+            "name": "sOARFramework",
+            "type": "solutionpack",
+            "label": "SOAR Framework",
+            "minVersion": null
+        }
+    ],
+    "prerequisite": null,
+    "publisher": "Community",
+    "description": "FortiSOAR for Microsoft Teams application allows teams to leverage the power of FortiSOAR as part of their daily communications.",
+    "help": null,
+    "category": [
+        "Communication and Coordination"
+    ],
+    "supportInfo": null,
+    "iconLarge": null,
+    "postInstallConfig": null,
+    "date": "2023-06-12T17:42:02+00:00",
+    "contents": {
+        "picklistNames": [
+            {
+                "name": "External Channel"
+            }
+        ],
+        "playbooks": [
+            {
+                "name": "02 - Use Case - FortiSOAR for Microsoft Teams"
+            }
+        ],
+        "globalVariables": [
+            {
+                "id": 7,
+                "name": "Server_fqhn",
+                "value": "localhost.localdomain",
+                "default_value": "master.fortisoar.in"
+            },
+            {
+                "id": 25,
+                "name": "server_url",
+                "value": "localhost.localdomain",
+                "default_value": "localhost.localdomain"
+            }
+        ],
+        "playbookBlocks": [],
+        "rules": [
+            "Microsoft Teams > Send Manual Input link",
+            "Microsoft Teams > Notify on Playbook failure",
+            "Microsoft Teams > Send Manual Input Form"
+        ],
+        "ruleChannels": [
+            "Microsoft Team",
+            "Microsoft Teams Link"
+        ],
+        "connectors": [
+            {
+                "name": "Microsoft Teams",
+                "apiName": "microsoft-teams",
+                "version": "3.0.0"
+            }
+        ]
+    }
+}

@@ -1,0 +1,40 @@
+{
+    "@context": "\/api\/3\/contexts\/PicklistName",
+    "@id": "\/api\/3\/picklist_names\/80d5768c-c5a2-44a7-9177-97da0332282a",
+    "@type": "PicklistName",
+    "name": "External Channel",
+    "system": true,
+    "picklists": [
+        {
+            "@id": "\/api\/3\/picklists\/afb18b7f-510b-471a-9b9c-7f4646edd4bb",
+            "@type": "Picklist",
+            "itemValue": "Email",
+            "orderIndex": 0,
+            "color": null,
+            "icon": null,
+            "listName": "\/api\/3\/picklist_names\/80d5768c-c5a2-44a7-9177-97da0332282a",
+            "uuid": "afb18b7f-510b-471a-9b9c-7f4646edd4bb"
+        },
+        {
+            "@id": "\/api\/3\/picklists\/afb18b7f-510b-471a-9b9c-7f4646edd4ee",
+            "@type": "Picklist",
+            "itemValue": "Slack",
+            "orderIndex": 1,
+            "color": null,
+            "icon": null,
+            "listName": "\/api\/3\/picklist_names\/80d5768c-c5a2-44a7-9177-97da0332282a",
+            "uuid": "afb18b7f-510b-471a-9b9c-7f4646edd4ee"
+        },
+        {
+            "@id": "\/api\/3\/picklists\/c7c35e25-9c26-4a43-a984-4f57d2027111",
+            "@type": "Picklist",
+            "itemValue": "Microsoft Teams",
+            "orderIndex": 2,
+            "color": null,
+            "icon": null,
+            "listName": "\/api\/3\/picklist_names\/80d5768c-c5a2-44a7-9177-97da0332282a",
+            "uuid": "c7c35e25-9c26-4a43-a984-4f57d2027111"
+        }
+    ],
+    "uuid": "80d5768c-c5a2-44a7-9177-97da0332282a"
+}
