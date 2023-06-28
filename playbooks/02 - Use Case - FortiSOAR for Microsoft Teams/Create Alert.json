@@ -219,7 +219,7 @@
             "name": "Set Response",
             "description": null,
             "arguments": {
-                "bot_response": "Done! Alert '{{vars.steps.Alert_Manual_Input_Form.input.alertName}}' successfully created. <a href=https:\/\/{{globalVars.server_url}}\/modules\/alerts\/{{vars.steps.Create_Alert_Record.uuid}}>View Alert<\/a>"
+                "bot_response": "Done! Alert '{{vars.steps.Alert_Manual_Input_Form.input.alertName}}' successfully created. <a href=https:\/\/{{globalVars.Server_fqhn}}\/modules\/alerts\/{{vars.steps.Create_Alert_Record.uuid}}>View Alert<\/a>"
             },
             "status": null,
             "top": "620",
