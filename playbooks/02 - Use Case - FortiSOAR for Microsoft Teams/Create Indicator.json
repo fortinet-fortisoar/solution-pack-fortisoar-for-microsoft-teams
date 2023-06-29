@@ -400,7 +400,7 @@
             "name": "Set Response",
             "description": null,
             "arguments": {
-                "bot_response": "Done! Indicator '{{vars.indicator_val}}' successfully created in FortiSOAR.\n <a href=https:\/\/{{globalVars.Server_fqhn}}\/modules\/indicators\/{{vars.steps.Create_Indicator[0].uuid}}> View Indicator<\/a>",
+                "bot_response": "Done! Indicator '{{vars.indicator_val}}' successfully created in FortiSOAR.\n <a href=https:\/\/{{globalVars.Server_fqhn}}\/modules\/indicators\/{{vars.steps.Create_Indicator[0].uuid}}> View Indicator<\/a>"
             },
             "status": null,
             "top": "980",

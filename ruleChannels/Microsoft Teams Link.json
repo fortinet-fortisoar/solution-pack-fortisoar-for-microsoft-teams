@@ -5,7 +5,7 @@
     "description": "To send a message to Microsoft Teams when certain rule is met.",
     "config": {
         "label": "Microsoft Teams",
-        "config": "43f79cd0-d490-4ad1-aba5-ccf780c759e6",
+        "config": "1cb1240e-2f2c-43f6-93a6-f09253ad0cce",
         "version": "3.0.0",
         "connector": "microsoft-teams",
         "operation": "send_input"
