@@ -37,7 +37,7 @@
             "type": "connector",
             "params": {
                 "input": "{{vars.input.record}}",
-                "message": "**A FortiSOAR playbook is requesting your input.  Please provide your input using the following link:**  <a href=\"https:\/\/{{vars.input.record.server_fqhn | ternary(vars.input.record.server_fqhn, globalVars.Server_fqhn)}}\/{{vars.input.record.agent_id | ternary('', 'input')}}?inputId={{vars.input.record.id}}&amp;token={{vars.input.record.token}}\"> Open input form<\/a>\n<br><br>Regards,\n<br>FortiSOAR Admin.<br>\n\n\n{{vars.input}}"
+                "message": "**A FortiSOAR playbook is requesting your input.  Please provide your input using the following link:**  <a href=\"https:\/\/{{vars.input.record.server_fqhn | ternary(vars.input.record.server_fqhn, globalVars.Server_fqhn)}}\/{{vars.input.record.agent_id | ternary('', 'input')}}?inputId={{vars.input.record.id}}&amp;token={{vars.input.record.token}}\"> Open input form<\/a>\n<br><br>Regards,\n<br>FortiSOAR Admin."
             },
             "enabled": true,
             "channel_uuid": "04f6e897-d2c8-4fe0-ad70-7f03d6120f9a"
