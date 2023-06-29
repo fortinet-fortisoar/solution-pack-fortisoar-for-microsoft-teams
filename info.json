@@ -39,7 +39,7 @@
         "rules": [
             "Microsoft Teams > Send Manual Input link",
             "Microsoft Teams > Notify on Playbook failure",
-            "Microsoft Teams > Send Manual Input Form"
+            "Microsoft Teams > Notify on External Manual Input Form"
         ],
         "ruleChannels": [
             "Microsoft Team",

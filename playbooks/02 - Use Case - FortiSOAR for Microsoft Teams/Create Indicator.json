@@ -4,7 +4,7 @@
     "name": "Create Indicator",
     "aliasName": null,
     "tag": null,
-    "description": "Gets triggered on createIndicator command when used in Microsoft Team",
+    "description": "Extract Indicators from the text provided as Input",
     "isActive": true,
     "debug": false,
     "singleRecordExecution": false,

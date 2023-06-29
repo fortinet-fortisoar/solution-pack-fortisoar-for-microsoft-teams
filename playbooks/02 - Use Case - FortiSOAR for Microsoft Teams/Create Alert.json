@@ -4,7 +4,7 @@
     "name": "Create Alert",
     "aliasName": null,
     "tag": null,
-    "description": "Gets triggered on createAlert command when used in Microsoft Teams",
+    "description": "Creates an alert based on the values provided in the form",
     "isActive": true,
     "debug": false,
     "singleRecordExecution": false,
