@@ -1,7 +1,7 @@
 {
     "uuid": "339144cd-ed92-4911-a1d4-4c2986acba0e",
     "type": "connector",
-    "name": "Microsoft Team",
+    "name": "Microsoft Teams",
     "description": "It Sends a Manual Input Form to the Microsoft Teams application.",
     "config": {
         "label": "Microsoft Teams",
