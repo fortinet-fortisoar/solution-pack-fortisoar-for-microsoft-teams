@@ -1,6 +1,6 @@
 {
     "uuid": "d59e697a-6822-4b0e-a6a9-caf80904449b",
-    "name": "Microsoft Teams > Send Manual Input link",
+    "name": "Microsoft Teams > Send Manual Input link to Microsoft Teams",
     "entity_type": "manualinput",
     "event_type": "create",
     "trigger_condition": {
@@ -37,7 +37,7 @@
             "type": "connector",
             "params": {
                 "input": "{{vars.input.record}}",
-                "message": "**A FortiSOAR playbook is requesting your input.  Please provide your input using the following link:**  <a href=\"https:\/\/{{vars.input.record.server_fqhn | ternary(vars.input.record.server_fqhn, globalVars.Server_fqhn)}}\/{{vars.input.record.agent_id | ternary('', 'input')}}?inputId={{vars.input.record.id}}&amp;token={{vars.input.record.token}}\"> Open input form<\/a>\n<br><br>Regards,\n<br>FortiSOAR Admin."
+                "message": "A FortiSOAR playbook is requesting your input.  <br> <br> Please provide your input using the following link:  <a href=\"https://{{vars.input.record.server_fqhn | ternary(vars.input.record.server_fqhn, globalVars.Server_fqhn)}}/{{vars.input.record.agent_id | ternary('', 'input')}}?inputId={{vars.input.record.id}}&amp;token={{vars.input.record.token}}\"> Open input form</a>\n<br><br>Regards,\n<br><br>FortiSOAR Admin."
             },
             "enabled": true,
             "channel_uuid": "04f6e897-d2c8-4fe0-ad70-7f03d6120f9a"
