@@ -4,14 +4,12 @@
     "name": "Create Indicator",
     "aliasName": null,
     "tag": null,
-    "description": "Gets triggered on createIndicator command when used in Microsoft Team",
+    "description": "Gets triggered on createIndicator command when used in Microsoft Teams",
     "isActive": true,
     "debug": false,
     "singleRecordExecution": false,
     "remoteExecutableFlag": false,
-    "parameters": [
-        "indicatorVal"
-    ],
+    "parameters": [],
     "synchronous": false,
     "collection": "\/api\/3\/workflow_collections\/fc1ec058-a935-442f-8bb2-0b12ab5717eb",
     "versions": [],
@@ -36,7 +34,8 @@
             "name": "Configuration",
             "description": null,
             "arguments": {
-                "indicator_val": "{{vars.bot_context.indicator_input}}"
+                "indicator_val": "{{vars.bot_context.indicator}}",
+                "conversation_id": "{{vars.bot_context.conversation_id}}"
             },
             "status": null,
             "top": "140",
@@ -124,9 +123,14 @@
                             "operator": "eq",
                             "_operator": "eq"
                         }
+                    ],
+                    "__selectFields": [
+                        "id",
+                        "value"
                     ]
                 },
                 "module": "indicators?$limit=30",
+                "checkboxFields": true,
                 "step_variables": []
             },
             "status": null,
@@ -138,7 +142,7 @@
         },
         {
             "@type": "WorkflowStep",
-            "name": "Get Indicator value from Manual Input",
+            "name": "Get Indicator value from Input Form",
             "description": null,
             "arguments": {
                 "type": "InputBased",
@@ -169,7 +173,7 @@
                 "owner_detail": {
                     "isAssigned": false,
                     "emailRecipients": "",
-                    "externalRecipients": "{{vars.user_id}}"
+                    "externalRecipients": "{{vars.conversation_id}}"
                 },
                 "isRecordLinked": false,
                 "step_variables": [],
@@ -208,7 +212,7 @@
         },
         {
             "@type": "WorkflowStep",
-            "name": "Incorrect Indicator Submission",
+            "name": "Invalid Indicator Submission",
             "description": null,
             "arguments": {
                 "bot_response": "The indicator parameters provided were incorrect."
@@ -219,20 +223,6 @@
             "stepType": "\/api\/3\/workflow_step_types\/04d0cf46-b6a8-42c4-8683-60a7eaa69e8f",
             "group": null,
             "uuid": "06f0face-3ce6-4490-a084-ce0ef6a84ae5"
-        },
-        {
-            "@type": "WorkflowStep",
-            "name": "Indicator already present",
-            "description": null,
-            "arguments": {
-                "bot_response": "Indicator already present!"
-            },
-            "status": null,
-            "top": "800",
-            "left": "480",
-            "stepType": "\/api\/3\/workflow_step_types\/04d0cf46-b6a8-42c4-8683-60a7eaa69e8f",
-            "group": null,
-            "uuid": "785fb457-a45f-4160-bc4c-7b6906fbb68a"
         },
         {
             "@type": "WorkflowStep",
@@ -250,7 +240,7 @@
         },
         {
             "@type": "WorkflowStep",
-            "name": "Is blank submission",
+            "name": "Is Blank Submission",
             "description": null,
             "arguments": {
                 "conditions": [
@@ -264,7 +254,7 @@
                         "option": "Yes",
                         "default": true,
                         "step_iri": "\/api\/3\/workflow_steps\/379b6d42-16d4-489a-abaf-d86d27e885e3",
-                        "step_name": "Manual Input Invalid Indicator"
+                        "step_name": "Invalid Input"
                     }
                 ]
             },
@@ -277,7 +267,7 @@
         },
         {
             "@type": "WorkflowStep",
-            "name": "Is indicator present",
+            "name": "Is Exists",
             "description": null,
             "arguments": {
                 "conditions": [
@@ -285,7 +275,7 @@
                         "option": "Yes",
                         "step_iri": "\/api\/3\/workflow_steps\/785fb457-a45f-4160-bc4c-7b6906fbb68a",
                         "condition": "{{ (vars.steps.Find_Indicator | length) >  0 }}",
-                        "step_name": "Indicator already present"
+                        "step_name": "Set Bot Response"
                     },
                     {
                         "option": "No",
@@ -383,10 +373,24 @@
         },
         {
             "@type": "WorkflowStep",
+            "name": "Set Bot Response",
+            "description": null,
+            "arguments": {
+                "bot_response": "Indicator already present!"
+            },
+            "status": null,
+            "top": "800",
+            "left": "480",
+            "stepType": "\/api\/3\/workflow_step_types\/04d0cf46-b6a8-42c4-8683-60a7eaa69e8f",
+            "group": null,
+            "uuid": "785fb457-a45f-4160-bc4c-7b6906fbb68a"
+        },
+        {
+            "@type": "WorkflowStep",
             "name": "Set Indicator",
             "description": null,
             "arguments": {
-                "indicator_val": "{{vars.steps.Get_Indicator_value_from_Manual_Input.input.indicator}}"
+                "indicator_val": "{{vars.steps.Get_Indicator_value_from_Input_Form.input.indicator}}"
             },
             "status": null,
             "top": "400",
@@ -400,9 +404,7 @@
             "name": "Set Response",
             "description": null,
             "arguments": {
-                "full_url": "href=https:\/\/{{globalVars.server_url}}\/modules\/indicators\/{{vars.steps.Create_Indicator[0].uuid}}",
-                "bot_response": "Done! Indicator '{{vars.indicator_val}}' successfully created in FortiSOAR.\n <a href=https:\/\/{{globalVars.server_url}}\/modules\/indicators\/{{vars.steps.Create_Indicator[0].uuid}}> View Indicator<\/a>",
-                "indicator_uuid": "{{vars.steps.Create_Indicator[0].uuid}}"
+                "bot_response": "Done! Indicator '{{vars.indicator_val}}' successfully created in FortiSOAR.\n <a href=https:\/\/{{globalVars.Server_fqhn}}\/modules\/indicators\/{{vars.steps.Create_Indicator[0].uuid}}> View Indicator<\/a>"
             },
             "status": null,
             "top": "980",

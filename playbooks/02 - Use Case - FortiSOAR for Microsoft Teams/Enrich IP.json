@@ -4,7 +4,7 @@
     "name": "Enrich IP",
     "aliasName": null,
     "tag": null,
-    "description": "This playbook triggers after hitting an enrichIP command using FortiSOAR for Microsoft Teams Bot",
+    "description": "Gets triggered on enrichIP command when used in Microsoft Teams",
     "isActive": true,
     "debug": false,
     "singleRecordExecution": false,
@@ -31,8 +31,8 @@
                 "workflowReference": "\/api\/3\/workflows\/9e99ba9b-1536-444e-8aae-db904485567c"
             },
             "status": null,
-            "top": "157",
-            "left": "414",
+            "top": "160",
+            "left": "420",
             "stepType": "\/api\/3\/workflow_step_types\/74932bdc-b8b6-4d24-88c4-1a4dfbc524f3",
             "group": null,
             "uuid": "0ae898c7-7cf9-40bb-9dfb-fa92b1625f70"

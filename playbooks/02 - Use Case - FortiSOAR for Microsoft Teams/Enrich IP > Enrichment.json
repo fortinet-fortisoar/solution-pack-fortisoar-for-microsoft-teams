@@ -4,7 +4,7 @@
     "name": "Enrich IP > Enrichment",
     "aliasName": null,
     "tag": null,
-    "description": "Gets triggered  reference playbook when enrichIP command used in Microsoft Teams",
+    "description": "Reference playbook that gets triggered from Microsoft Teams based and provides latest reputation formatted for Microsoft Teams",
     "isActive": true,
     "debug": false,
     "singleRecordExecution": false,
