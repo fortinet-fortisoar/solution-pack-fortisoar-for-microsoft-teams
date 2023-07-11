@@ -46,7 +46,7 @@
     "is_system": false,
     "is_active": true,
     "priority": 10,
-    "event_source": "sealab",
+    "event_source": "crudhub",
     "source": null,
     "channel_preference_field": null,
     "visible": true,
