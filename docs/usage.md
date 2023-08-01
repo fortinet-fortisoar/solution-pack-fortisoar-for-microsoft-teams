@@ -1,43 +1,87 @@
 | [Home](../README.md) |
-|--------------------------------------------|
+|----------------------|
 
 # Usage
 
-This section gives a brief description on some of the commands used in FortiSOAR for Microsoft Teams application:
+After completing the set up of FortiSOAR for Microsoft Teams application, you can begin using the app as described in the [FortiSOAR&trade;-Microsoft Teams Application Usage](https://docs.fortinet.com/document/fortisoar/1.0.0/fortisoar-for-microsoft-teams-application/630/fortisoar-for-microsoft-teams-application-v1-0-0#FSRMsTeamsUsage) section of FortiSOAR&trade; product documentation.
+
+This section gives a brief description on the commands used in FortiSOAR for Microsoft Teams application.
 
 ## `@fortiSOAR createAlert`
 
-This commands performs the following actions:
+This command performs the following actions:
 
-1. Displays a new alert form.
-2. Uses the details from the form to create a new alert in FortiSOAR.
+1. Displays a **Create New Alert** form.
+2. Takes the name and description entered in the inline interactive form on the Microsoft Teams application to create a new alert in FortiSOAR&trade;.
 
-You can create placeholder alerts on the fly for further investigation by the Security Operations Center (SOC) team.
+You can create alerts on the fly for further investigation by the Security Operations Center (SOC) team.
+
+For more information and examples for this command, refer to the [Adding an Alert](https://docs.fortinet.com/document/fortisoar/1.0.0/fortisoar-for-microsoft-teams-application/630/fortisoar-for-microsoft-teams-application-v1-0-0#Adding_an_alert) section of FortiSOAR&trade; product documentation.
 
 ## `@fortiSOAR createIndicator`
 
-This commands performs the following actions:
+This command performs the following actions:
 
-1. Displays a new indicator form.
-2. Uses the details from the form to create a new indicator in FortiSOAR.
-3. Takes an indicator value in the command to create the indicator with the specified value.
+1. Displays a **Create New Indicator** form.
+2. Takes the indicator value from the command to create an indicator in FortiSOAR&trade; with the information specified in the inline interactive form on the Microsoft Teams application.
 
-    `@fortiSOAR createIndicator <indicator_value>` adds an indicator in FortiSOAR and gets the latest enrichment details back to Microsoft Teams within seconds.
+### Syntax
 
-    For example, `@fortiSOAR createIndicator gumblar.cn` creates an indicator of value `gumblar.cn`.
+```
+@fortiSOAR createIndicator <indicator_value>
+```
+
+### Example
+
+```
+@fortiSOAR createIndicator gumblar.cn
+```
+
+This command creates an indicator of value `gumblar.cn` in FortiSOAR&trade;
 
 You can create indicators on the fly for enrichment and further investigation by the Security Operations Center (SOC) team.
 
+For more information and examples for this command, refer to the [Adding an indicator with the indicator value specified](https://docs.fortinet.com/document/fortisoar/1.0.0/fortisoar-for-microsoft-teams-application/630/fortisoar-for-microsoft-teams-application-v1-0-0#Adding_an_indicator_with_the_indicator_value_specified) section of FortiSOAR&trade; product documentation.
+
 ## `@fortiSOAR invokePlaybook`
 
-This command takes another argument `<tag_name>` to trigger the playbook containing the tag `<<tag_name>>`.
+This command takes another argument `<tag_name>` to trigger a FortiSOAR&trade; playbook containing the tag `<tag_name>`.
 
-For example, the command `invokePlaybook getIPRep` invokes playbooks with the tag `getIPRep`.
+> **NOTE**:  If there are multiple playbooks with the same tag, the first found playbook is triggered.
 
-This powerful action opens the automation capabilities for FortiSOAR where you can create and invoke playbooks in FortiSOAR.
+To create playbooks that can be triggered from Microsoft Teams chat interface, refer to [Create a custom playbook to be triggered from Microsoft Teams](https://docs.fortinet.com/document/fortisoar/1.0.0/fortisoar-for-microsoft-teams-application/630/fortisoar-for-microsoft-teams-application-v1-0-0How_to_create_a_custom_playbook_that_can_be_triggered_from_Microsoft_Teams_) section of FortiSOAR&trade; product documentation.
 
->**NOTE**: The playbook you are trying to invoked must have an existing `bot_enabled` tag. 
+You can design the manual input modal in FortiSOAR&trade; to send interactive inline forms on Microsoft Teams application's chat interface. Refer to this [example of running a Manual Input playbook that uses Microsoft Teams as a delivery medium](https://docs.fortinet.com/document/fortisoar/1.0.0/fortisoar-for-microsoft-teams-application/630/fortisoar-for-microsoft-teams-application-v1-0-0#Example_of_running_a_Manual_Input_playbook_that_uses_Microsoft_Teams_as_a_delivery_medium).
+
+<table>
+    <tr>
+        <td><strong>NOTE</strong></td><td>The playbooks being invoked must also have a <code>bot_enabled</code> tag.</td>
+    </tr>
+</table>
+
+### Syntax
+
+```
+@fortiSOAR invokePlaybook <tag_name>
+```
+
+### Example
+
+```
+@fortiSOAR invokePlaybook getIPRep
+```
+
+The command triggers FortiSOAR&trade; playbooks with the tag `getIPRep`.
+
+For more information and examples for this command, refer to the [Example of invoking a FortiSOAR playbook from Microsoft Teams](https://docs.fortinet.com/document/fortisoar/1.0.0/fortisoar-for-microsoft-teams-application/630/fortisoar-for-microsoft-teams-application-v1-0-0#Example_of_invoking_a_FortiSOAR_playbook_from_Microsoft_Teams_) section of FortiSOAR&trade; product documentation.
 
 ## `@fortiSOAR help`
 
-This command brings up the available commands and their usage details.
+This command brings up the available commands and their usage details. Following image shows the FortiSOAR&trade; help message on Microsoft Teams application:
+
+![](./res/help-message.png)
+
+## Next Steps
+
+| [Installation](./setup.md#installation) | [Configuration](./setup.md#configuration) | [Contents](./contents.md) |
+|-----------------------------------------|-------------------------------------------|---------------------------|

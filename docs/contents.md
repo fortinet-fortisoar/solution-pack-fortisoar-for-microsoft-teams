@@ -3,49 +3,56 @@
 
 # Contents
 
-The **FortiSOAR for Microsoft Teams** solution pack contains the following resources.
+The **FortiSOAR&trade; for Microsoft Teams** solution pack contains the following resources.
 
 ## Connectors
 
-| Name       | Description                                                                                                                                                                       |
-|:-----------|:----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
-| Microsoft Teams      | Microsoft Teams is a chat-based workspace in Office 365 that provides global, remote, and dispersed teams with the ability to work together and share information using a common space. This connector facilitates automated operation related to teams. |
-| VirusTotal | Scans and analyzes suspicious files, URLs, IP addresses and retrieves reports from VirusTotal about them                                                                          |
-| IPStack    | IPStack provides geolocation facility for IP Address or Domain.                                                                                                                   |
+| Name            | Description                                                                                                                                                                                                                                              |
+|:----------------|:---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
+| Microsoft Teams | Microsoft Teams is a chat-based workspace in Office 365 that provides global, remote, and dispersed teams with the ability to work together and share information using a common space. This connector facilitates automated operation related to teams. |
 
 ## Notification Channel
 
-| Name               | Description                                         |
-|:-------------------|:----------------------------------------------------|
-| Microsoft Teams Link | To send a message to Microsoft Teams when certain rule is met. |
-| Microsoft Team      | It Sends a Manual Input Form to the Microsoft Teams application.|
+Notification channels help define various modes of delivering a notification. Channels can be referred to as categories that define how a notification using that channel is delivered to the user.
+
+| Name                 | Description                                                                                                          |
+|:---------------------|:---------------------------------------------------------------------------------------------------------------------|
+| Microsoft Teams Link | Sends a **message** to Microsoft Teams application when a rule using this channel is triggered.                          |
+| Microsoft Teams      | Sends an **inline interactive form** to the Microsoft Teams application when a rule using this channel is triggered. |
 
 ## Rules
 
 Rules provide a framework to define a condition that generates notifications.
 
-| Name                                     | Description                                                                                                                                                          |
-|:-----------------------------------------|:---------------------------------------------------------------------------------------------------------------------------------------------------------------------|
-| Microsoft Teams > Notify on External Manual Input Form | It Sends a Manual Input Form to the Microsoft Teams application. when the manual input step for Microsoft Teams is triggered. |
-| Microsoft Teams > Notify on Playbook failure | Sends an error when a playbook which has `bot_enabled` tag fails. Error: `PlaybookName` Playbook has failed. Please check the *Executed Playbook Logs* in FortiSOAR. |
-| Microsoft Teams > Send Manual Input link  | Sends a link to Microsoft Teams that can be clicked to get the manual input.                                      |
+| Name                                                   | Description                                                                                                                          |
+|:-------------------------------------------------------|:-------------------------------------------------------------------------------------------------------------------------------------|
+| Microsoft Teams > Notify on External Manual Input Form | Sends an **inline interactive form** to the Microsoft Teams application when the manual input step for Microsoft Teams is triggered. |
+| Microsoft Teams > Notify on Playbook failure           | Sends an error when a playbook with a `bot_enabled` tag fails.                                                                       |
+| Microsoft Teams > Send Manual Input link               | Sends a link to Microsoft Teams to click and open the manual input form on FortiSOAR&trade; interface.                               |
 
 When creating notification rules, selecting **Manual Input** as a notification trigger, makes following conditions available:
-- **External Channels (Inline)** - The manual input form appears inline with other FortiSOAR messages in Microsoft Teams.
+
+- **External Channels (Inline)** - The following image shows an **inline interactive form** that appears with other FortiSOAR&trade; messages in Microsoft Teams.
 
     ![](./res/inline-form.png)
 
-- **External Channels (Link)** - The manual input form appears as a link with other FortiSOAR messages in Microsoft Teams.
+- **External Channels (Link)** - The following image shows a message that contains a **link to a manual input form** on FortiSOAR&trade; interface.
 
     ![](./res/form-as-link.png)
 
 ## Playbook Collection
 
 | 02 - Use Case - FortiSOAR for Microsoft Teams |
-|:------------------------------------|
+|:----------------------------------------------|
 
-| Playbook Name        | Description                                                                                                |
-|:---------------------|:-----------------------------------------------------------------------------------------------------------|
-| Create Indicator     | Extract Indicators from the text provided as Input                                                         |
-| Create Alert         | Creates an alert based on the values provided in the form                                                  |
-| Enrich IP From Microsoft Teams | Reference playbook that gets triggered from Microsoft Teams based and provides latest reputation formatted for Microsoft Teams |
+| Playbook Name          | Description                                                                                                                                   |
+|:-----------------------|:----------------------------------------------------------------------------------------------------------------------------------------------|
+| Create Indicator       | Extracts indicators from the text provided as input                                                                                           |
+| Create Alert           | Creates an alert based on the values provided in the form                                                                                     |
+| Enrich IP              | Triggers *Enrich IP > Enrichment* playbook to enrich the IP address specified through `enrichIP` command in Microsoft Teams application.      |
+| Enrich IP > Enrichment | Enriches an IP address using VirusTotal and IPStack as threat intelligence solutions and displays the summary on Microsoft Teams application. |
+
+## Next Steps
+
+| [Installation](./setup.md#installation) | [Configuration](./setup.md#configuration) | [Usage](./usage.md) |
+|-----------------------------------------|-------------------------------------------|---------------------|
