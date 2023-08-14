@@ -6,8 +6,11 @@
     "config": {
         "label": "Microsoft Teams",
         "connector": "microsoft-teams",
-        "operation": "send_input"
+        "operation": "send_message_or_approval_form_to_bot"
     },
     "is_active": true,
-    "default_params": []
+    "default_params": {
+        "type": "Manual Input Form",
+        "input": ""
+    }
 }
