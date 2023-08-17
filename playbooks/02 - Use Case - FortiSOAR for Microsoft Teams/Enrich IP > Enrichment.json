@@ -122,6 +122,7 @@
             "description": null,
             "arguments": {
                 "indicator_val": "{{vars.input.params.IPAddress}}",
+                "conversation_id": "{{vars.input.params.BotContext.conversation_id}}",
                 "enrich_connector_list": "[\"virustotal\",\"ipstack\"]"
             },
             "status": null,
@@ -193,7 +194,7 @@
             "name": "Formatted Response",
             "description": null,
             "arguments": {
-                "bot_response": "**Below is the latest indicator reputation summary for IP {{vars.indicator_val}}:** <br>\n\n**Virus Total Reputation Summary** <br>**Harmless** Votes:{{vars.steps.Get_IP_Reputation.data.attributes['last_analysis_stats'].harmless}} <br> **Malicious:** Votes:{{vars.steps.Get_IP_Reputation.data.attributes['last_analysis_stats'].malicious}} <br> **Suspicious:** Votes:{{vars.steps.Get_IP_Reputation.data.attributes['last_analysis_stats'].suspicious}} <br> **Country:** {{vars.steps.Get_IP_Reputation.data.attributes.country}} <br> **Regional Internet Registry:** {{vars.steps.Get_IP_Reputation.data.attributes['regional_internet_registry']}}\n<br><br><br>\n**IP Stack Gelocation Summary** <br> Zip:{{vars.steps.Get_Rep_IPStack.data[0].zip}} <br> **City:** {{vars.steps.Get_Rep_IPStack.data[0].city}} <br> **Type:** {{vars.steps.Get_Rep_IPStack.data[0].type}}<br> **Hostname:** {{vars.steps.Get_Rep_IPStack.data[0].hostname}}<br> **Latitude:** {{vars.steps.Get_Rep_IPStack.data[0].latitude}}<br> **Longitude:** {{vars.steps.Get_Rep_IPStack.data[0].longitude}}<br> **Region Name:** 23<br> **Country Name:** {{vars.steps.Get_Rep_IPStack.data[0]['country_name']}}<br> **Continent:** {{vars.steps.Get_Rep_IPStack.data[0]['continent_name']}}"
+                "bot_response": "**Below is the latest indicator reputation summary for IP {{vars.indicator_val}}:** <br>\n\n**Virus Total Reputation Summary** <br>**Harmless** Votes:{{vars.steps.Get_IP_Reputation.data.attributes['last_analysis_stats'].harmless}} <br> **Malicious:** Votes:{{vars.steps.Get_IP_Reputation.data.attributes['last_analysis_stats'].malicious}} <br> **Suspicious:** Votes:{{vars.steps.Get_IP_Reputation.data.attributes['last_analysis_stats'].suspicious}} <br> **Country:** {{vars.steps.Get_IP_Reputation.data.attributes.country}} <br> **Regional Internet Registry:** {{vars.steps.Get_IP_Reputation.data.attributes['regional_internet_registry']}}\n<br><br><br>\n**IP Stack Gelocation Summary** <br> **Zip**:{{vars.steps.Get_Rep_IPStack.data[0].zip}} <br> **City:** {{vars.steps.Get_Rep_IPStack.data[0].city}} <br> **Type:** {{vars.steps.Get_Rep_IPStack.data[0].type}}<br> **Hostname:** {{vars.steps.Get_Rep_IPStack.data[0].hostname}}<br> **Latitude:** {{vars.steps.Get_Rep_IPStack.data[0].latitude}}<br> **Longitude:** {{vars.steps.Get_Rep_IPStack.data[0].longitude}}<br> **Region Name:** 23<br> **Country Name:** {{vars.steps.Get_Rep_IPStack.data[0]['country_name']}}<br> **Continent:** {{vars.steps.Get_Rep_IPStack.data[0]['continent_name']}}"
             },
             "status": null,
             "top": "1200",
@@ -339,13 +340,14 @@
                 "name": "Microsoft Teams",
                 "config": "9caf6e43-d755-4007-bdb6-013a7480c907",
                 "params": {
-                    "input": "{{vars.input.params.BotContext}}",
-                    "message": "{{vars.bot_response}}"
+                    "type": "Text Message",
+                    "message": "{{vars.bot_response}}",
+                    "conversation_id": "{{vars.conversation_id}}"
                 },
                 "version": "3.0.0",
                 "connector": "microsoft-teams",
-                "operation": "send_input",
-                "operationTitle": "Send Manual Input\/Adaptive Cards to a Microsoft Teams Bot",
+                "operation": "send_message_or_approval_form_to_bot",
+                "operationTitle": "Send Message\/Approval Form to Microsoft Teams",
                 "pickFromTenant": false,
                 "step_variables": []
             },

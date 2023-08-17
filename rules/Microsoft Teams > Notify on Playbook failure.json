@@ -29,8 +29,9 @@
         {
             "type": "connector",
             "params": {
-                "input": "{{vars.input.record}}",
-                "message": "\"{{vars.input.record.name}}\" Playbook has failed. Please check the \"Executed Playbook Logs\" in FortiSOAR."
+                "type": "Text Message",
+                "message": "\"{{vars.input.record.name}}\" Playbook has failed. Please check the \"Executed Playbook Logs\" or \"connectors log\" or \"Listener Logs\" in FortiSOAR.",
+                "conversation_id": "{{vars.input.record.input.bot_context.conversation_id if vars.input.record.input.bot_context.conversation_id else  vars.input.record.owner_details.emailRecipients}}"
             },
             "enabled": true,
             "channel_uuid": "04f6e897-d2c8-4fe0-ad70-7f03d6120f9a"

@@ -354,13 +354,14 @@
                 "name": "Microsoft Teams",
                 "config": "9caf6e43-d755-4007-bdb6-013a7480c907",
                 "params": {
-                    "input": "{{vars.bot_context}}",
-                    "message": "{{vars.bot_response}}"
+                    "type": "Text Message",
+                    "message": "{{vars.bot_response}}",
+                    "conversation_id": "{{vars.conversation_id}}"
                 },
                 "version": "3.0.0",
                 "connector": "microsoft-teams",
-                "operation": "send_input",
-                "operationTitle": "Send Manual Input\/Adaptive Cards to a Microsoft Teams Bot",
+                "operation": "send_message_or_approval_form_to_bot",
+                "operationTitle": "Send Message\/Approval Form to Microsoft Teams",
                 "pickFromTenant": false,
                 "step_variables": []
             },

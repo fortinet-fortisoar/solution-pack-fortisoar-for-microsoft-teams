@@ -36,8 +36,9 @@
         {
             "type": "connector",
             "params": {
-                "input": "{{vars.input.record}}",
-                "message": "A FortiSOAR playbook is requesting your input.  <br> <br> Please provide your input using the following link:  <a href=\"https://{{vars.input.record.server_fqhn | ternary(vars.input.record.server_fqhn, globalVars.Server_fqhn)}}/{{vars.input.record.agent_id | ternary('', 'input')}}?inputId={{vars.input.record.id}}&amp;token={{vars.input.record.token}}\"> Open input form</a>\n<br><br>Regards,\n<br><br>FortiSOAR Admin."
+                "type": "Text Message",
+                "message": "A FortiSOAR playbook is requesting your input.  <br> <br> Please provide your input using the following link:  <a href=\"https:\/\/{{vars.input.record.server_fqhn | ternary(vars.input.record.server_fqhn, globalVars.Server_fqhn)}}\/{{vars.input.record.agent_id | ternary('', 'input')}}?inputId={{vars.input.record.id}}&amp;token={{vars.input.record.token}}\"> Open input form<\/a><br><br>Regards,<br><br>FortiSOAR Admin.",
+                "conversation_id": "{{vars.input.record.input.bot_context.conversation_id if vars.input.record.input.bot_context.conversation_id else  vars.input.record.owner_details.emailRecipients}}"
             },
             "enabled": true,
             "channel_uuid": "04f6e897-d2c8-4fe0-ad70-7f03d6120f9a"
