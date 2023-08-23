@@ -361,7 +361,7 @@
                 "version": "3.0.0",
                 "connector": "microsoft-teams",
                 "operation": "send_message_or_approval_form_to_bot",
-                "operationTitle": "Send Message\/Approval form to Microsoft Teams",
+                "operationTitle": "Send Bot Message/Input Form",
                 "pickFromTenant": false,
                 "step_variables": []
             },
