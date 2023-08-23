@@ -4,7 +4,7 @@
     "name": "Enrich IP > Enrichment",
     "aliasName": null,
     "tag": null,
-    "description": "Reference playbook that gets triggered from Microsoft Teams based and provides latest reputation formatted for Microsoft Teams",
+    "description": "Enriches an IP address using VirusTotal and IPStack as threat intelligence solutions and displays the summary on Microsoft Teams application.",
     "isActive": true,
     "debug": false,
     "singleRecordExecution": false,
@@ -347,7 +347,7 @@
                 "version": "3.0.0",
                 "connector": "microsoft-teams",
                 "operation": "send_message_or_approval_form_to_bot",
-                "operationTitle": "Send Message\/Approval Form to Microsoft Teams",
+                "operationTitle": "Send Bot Message/Input Form",
                 "pickFromTenant": false,
                 "step_variables": []
             },
