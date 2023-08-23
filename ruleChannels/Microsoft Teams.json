@@ -2,7 +2,7 @@
     "uuid": "339144cd-ed92-4911-a1d4-4c2986acba0e",
     "type": "connector",
     "name": "Microsoft Teams",
-    "description": "It Sends a Manual Input Form to the Microsoft Teams application.",
+    "description": "Sends an inline interactive form to the Microsoft Teams application when a rule using this channel is triggered.",
     "config": {
         "label": "Microsoft Teams",
         "connector": "microsoft-teams",

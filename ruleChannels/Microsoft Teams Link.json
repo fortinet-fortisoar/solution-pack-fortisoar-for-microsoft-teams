@@ -2,7 +2,7 @@
     "uuid": "04f6e897-d2c8-4fe0-ad70-7f03d6120f9a",
     "type": "connector",
     "name": "Microsoft Teams Link",
-    "description": "To send a message to Microsoft Teams when certain rule is met.",
+    "description": "Sends a message to Microsoft Teams application when a rule using this channel is triggered.",
     "config": {
         "label": "Microsoft Teams",
         "connector": "microsoft-teams",

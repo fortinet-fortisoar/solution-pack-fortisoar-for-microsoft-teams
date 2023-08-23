@@ -4,7 +4,7 @@
     "name": "Create Alert",
     "aliasName": null,
     "tag": null,
-    "description": "Gets triggered on createAlert command when used in Microsoft Teams",
+    "description": "Creates an alert based on the values provided in the form. Gets triggered on createAlert command when used in Microsoft Teams",
     "isActive": true,
     "debug": false,
     "singleRecordExecution": false,
@@ -202,7 +202,7 @@
                 "version": "3.0.0",
                 "connector": "microsoft-teams",
                 "operation": "send_message_or_approval_form_to_bot",
-                "operationTitle": "Send Message\/Approval Form to Microsoft Teams",
+                "operationTitle": "Send Message\/Approval form to Microsoft Teams",
                 "pickFromTenant": false,
                 "step_variables": []
             },

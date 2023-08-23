@@ -4,7 +4,7 @@
     "name": "Enrich IP",
     "aliasName": null,
     "tag": null,
-    "description": "Gets triggered on enrichIP command when used in Microsoft Teams",
+    "description": "Triggers Enrich IP > Enrichment playbook to enrich the IP address specified through enrichIP command in Microsoft Teams application.",
     "isActive": true,
     "debug": false,
     "singleRecordExecution": false,
