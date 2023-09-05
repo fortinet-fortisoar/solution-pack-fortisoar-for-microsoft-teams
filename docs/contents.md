@@ -47,8 +47,8 @@ When creating notification rules, selecting **Manual Input** as a notification t
 
 | Playbook Name          | Description                                                                                                                                   |
 |:-----------------------|:----------------------------------------------------------------------------------------------------------------------------------------------|
-| Create Indicator       | Extracts indicators from the text provided as input                                                                                           |
-| Create Alert           | Creates an alert based on the values provided in the form                                                                                     |
+| Create Indicator       | Extracts indicators from the text provided as input. Gets triggered on createIndicator command when used in Microsoft Teams                   |
+| Create Alert           | Creates an alert based on the values provided in the form. Gets triggered on createAlert command when used in Microsoft Teams                 |
 | Enrich IP              | Triggers *Enrich IP > Enrichment* playbook to enrich the IP address specified through `enrichIP` command in Microsoft Teams application.      |
 | Enrich IP > Enrichment | Enriches an IP address using VirusTotal and IPStack as threat intelligence solutions and displays the summary on Microsoft Teams application. |
 
