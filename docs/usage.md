@@ -45,7 +45,7 @@ For more information and examples for this command, refer to the [Adding an indi
 
 ## `@fortiSOAR availableCommands`
 
-This command brings up lists all available tags that can be used to trigger a playbook.
+This command brings up list of all available tags that can be used to trigger a playbook in FortiSOAR.
 ```
 @fortiSOAR availableCommands
 ```
