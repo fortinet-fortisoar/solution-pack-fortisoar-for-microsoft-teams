@@ -43,6 +43,13 @@ You can create indicators on the fly for enrichment and further investigation by
 
 For more information and examples for this command, refer to the [Adding an indicator with the indicator value specified](https://docs.fortinet.com/document/fortisoar/1.0.0/fortisoar-for-microsoft-teams-application/630/fortisoar-for-microsoft-teams-application-v1-0-0#Adding_an_indicator_with_the_indicator_value_specified) section of FortiSOAR&trade; product documentation.
 
+## `@fortiSOAR availableCommands`
+
+This command brings up a list of all available tags that can be used to trigger a playbook in FortiSOAR™.
+```
+@fortiSOAR availableCommands
+```
+
 ## `@fortiSOAR invokePlaybook`
 
 This command takes another argument `<tag_name>` to trigger a FortiSOAR&trade; playbook containing the tag `<tag_name>`.
